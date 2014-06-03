@@ -4,17 +4,29 @@ rango
 walk through tutorial from www.tangowithdjango.com
 
 Overview:
+
+    Tutorial for django and developer tools such as git
+
+Git Cheatsheet:
+
+    * git pull  # sync remote repository with local copy
+    * git commit <file_name> # committing changes to local repository
+    * git push server master # committing changes to remote repository
+
 Design Brief:
+
     For the main page of the site, they would like visitors to be able to see:
-    - the 5 most viewed pages;
-    - the five most rango’ed categories; and
-    - some way for visitors to browse or search through categories.
-    - When a user views a category page, they would like it to display:
-        -- the category name, the number of visits, the number of likes;
-        -- along with the list of associated pages in that category 
+
+    * the 5 most viewed pages;
+    * the five most rango’ed categories; and
+    * some way for visitors to browse or search through categories.
+    * When a user views a category page, they would like it to display:
+        ** the category name, the number of visits, the number of likes;
+        ** along with the list of associated pages in that category 
            (showing the page’s title and linking to its url); and.
-        -- some search functionality (via Bing’s Search API) to find other 
+        ** some search functionality (via Bing’s Search API) to find other 
            pages that can be linked to this category.
+
     For a particular category, the client would like the name of the category 
     to be recorded, the number of times each category page has been visited, 
     and how many users have clicked a “like” button (i.e. the page gets rango’ed, 
