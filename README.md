@@ -11,7 +11,7 @@ Git Cheatsheet:
 
     * git pull  # sync remote repository with local copy
     * git commit <file_name> # committing changes to local repository
-    * git push server master # committing changes to remote repository
+    * git push origin master # committing changes to remote repository
 
 Design Brief:
 
