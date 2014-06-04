@@ -1,3 +1,4 @@
+# coding=utf-8
 # Django settings for tango_with_django_project project.
 
 DEBUG = True
@@ -124,6 +125,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'rango',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

@@ -37,3 +37,16 @@ Design Brief:
 
     Only registered users will be able to search and add pages to categories. 
     And so, visitors to the site should be able to register for an account.
+
+Cheatsheet:
+
+    Create a new Django Project:
+    * django-admin startproject <projname> <dest>
+    Create a new Django Application:
+    # python manage.py startapp <appname>
+    # Add appname to settings.INSTALLED_APPS tuple
+    # In projname urls.py file, add a mapping to the application (appname)
+    # In appname directory create urls.py file to direct incoming URL strings to views
+    # In appname view.py, create required views ensuring that they return a HttpResponse object
+
+
