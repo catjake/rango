@@ -50,3 +50,8 @@ Cheatsheet:
     # In appname view.py, create required views ensuring that they return a HttpResponse object
 
 
+Status:
+
+    * Added templates for index and about in views
+    * Added functionality for displaying images in static files location, designated by STATICFILES_DIR
+    * Added media server
