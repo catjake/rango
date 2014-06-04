@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{% load static %} <!-- Inform Django of static media usage ahead -->
+
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+    <body>
+        <h1>Rango says...</h1>
+        hello world! <strong>{{ boldmessage }}</strong><br/>
+        <a href="/rango/about">About</a><br/>
+        <img src="{% static 'Rango Valentine&#39;s Day.png' %}" alt="Picture of Rango"/>
+    </body>
+</html>

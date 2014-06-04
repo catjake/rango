@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+{% load static %} <!-- Inform Django of static media usage ahead -->
+
+<html>
+    <head>
+        <title>About Rango</title>
+    </head>
+    <body>
+        <p>Rango says:<br/>&nbsp;&nbsp;&nbsp;&nbsp;<i>It's about {{ timestamp.now }}</i></p>
+        <p><a href=/rango>Back to Main</a></p>
+        <img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Rango"/>
+    </body>
+</html>
