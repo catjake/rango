@@ -55,3 +55,6 @@ Status:
     * Added templates for index and about in views
     * Added functionality for displaying images in static files location, designated by STATICFILES_DIR
     * Added media server
+    * Created and synced sqlite3 database
+    * Registered models to admin interface
+    * Developed population script

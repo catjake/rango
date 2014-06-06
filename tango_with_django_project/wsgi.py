@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 WSGI config for tango_with_django_project project.
 
