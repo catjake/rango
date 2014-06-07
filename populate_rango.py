@@ -10,41 +10,50 @@ def populate():
     """
     pages_dict = {
         "Python": {
-            "cat_args": {"likes": 64, "views": 128},
+            "cat_args": {"url": "", "likes": 64, "views": 128},
             "pargs_list":
                 [
                     {"title": "Official Python Tutorial",
-                     "url": "http://docs.python.org/2/tutorial/", },
+                     "url": "http://docs.python.org/2/tutorial/",
+                     "views": 100, },
                     {"title": "How to Think like a Computer Scientist",
-                     "url": "http://www.greenteapress.com/thinkpython/",},
+                     "url": "http://www.greenteapress.com/thinkpython/",
+                     "views": 3, },
                     {"title": "Learn Python in 10 Minutes",
-                     "url": "http://www.korokithakis.net/tutorials/python/",},
+                     "url": "http://www.korokithakis.net/tutorials/python/",
+                     "views": 11, },
                 ],
         },
         "Django": {
-            "cat_args": {"likes": 32, "views": 64},
+            "cat_args": {"url": "", "likes": 32, "views": 64},
             "pargs_list":
                 [
                     {"title": "Official Django Tutorial",
-                     "url": "https://docs/djangoproject.com/en/1.5/intro/tutorial01/",},
+                     "url": "https://docs/djangoproject.com/en/1.5/intro/tutorial01/",
+                     "views": 23, },
                     {"title": "Django Rocks",
-                     "url": "http://www.djangorocks.com/",},
+                     "url": "http://www.djangorocks.com/",
+                     "views": 8, },
                     {"title": "How to Tango with Django",
-                     "url": "http://www.tangowithdjango.com/",},
+                     "url": "http://www.tangowithdjango.com/",
+                     "views": 20, },
                 ],
         },
         "Other Frameworks": {
-            "cat_args": {"likes": 16, "views": 32},
+            "cat_args": {"url": "", "likes": 16, "views": 32},
             "pargs_list":
                 [
                     {"title": "Bottle",
-                     "url": "http://bottlepy.org/docs/dev/",},
+                     "url": "http://bottlepy.org/docs/dev/",
+                     "views": 10, },
                     {"title": "Flask",
-                     "url": "http://flask.pocoo.org",},
+                     "url": "http://flask.pocoo.org",
+                     "views": 4, },
                 ],
         },
     }
     for cat_name, a_dict in pages_dict.iteritems():
+        # Category.url is set in __init__ after super, based off Category.name attribute
         a_cat, is_created = add_to_model(Category, name=cat_name, **a_dict["cat_args"])
         for kwargs in a_dict["pargs_list"]:
             a_page, is_created = add_to_model(Page, category=a_cat, **kwargs)

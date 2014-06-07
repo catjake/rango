@@ -58,3 +58,5 @@ Status:
     * Created and synced sqlite3 database
     * Registered models to admin interface
     * Developed population script
+    * Sourced data from models to views
+    * Added (views) details page to templates for each Category.name and corresponding Page objects
