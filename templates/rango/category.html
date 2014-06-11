@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+{% load static %} <!-- Inform Django of static media usage ahead -->
 <html>
     <head>
         <title>Rango: {{ category_name }}</title>
@@ -16,8 +17,14 @@
             {% else %}
                 <strong>No pages currently in category.</strong>
             {% endif %}
+            <p style="margin-left:10px;">
+                <a href="/rango/category/{{ category.url }}/add_page">Add a New Page</a>
+            </p>
         {% else %}
             The specified category {{ category_name }} does not exist!
         {% endif %}
+        <p>
+            <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
+        </p>
     </body>
 </html>

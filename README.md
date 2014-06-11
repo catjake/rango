@@ -60,3 +60,5 @@ Status:
     * Developed population script
     * Sourced data from models to views
     * Added (views) details page to templates for each Category.name and corresponding Page objects
+    * Created Page and Category Forms
+    * Added views for creating new category and adding a page to an existing category

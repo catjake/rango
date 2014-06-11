@@ -10,7 +10,7 @@ def populate():
     """
     pages_dict = {
         "Python": {
-            "cat_args": {"url": "", "likes": 64, "views": 128},
+            "cat_args": {"likes": 64, "views": 128},
             "pargs_list":
                 [
                     {"title": "Official Python Tutorial",
@@ -25,7 +25,7 @@ def populate():
                 ],
         },
         "Django": {
-            "cat_args": {"url": "", "likes": 32, "views": 64},
+            "cat_args": {"likes": 32, "views": 64},
             "pargs_list":
                 [
                     {"title": "Official Django Tutorial",
@@ -40,7 +40,7 @@ def populate():
                 ],
         },
         "Other Frameworks": {
-            "cat_args": {"url": "", "likes": 16, "views": 32},
+            "cat_args": {"likes": 16, "views": 32},
             "pargs_list":
                 [
                     {"title": "Bottle",
