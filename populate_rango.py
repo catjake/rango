@@ -51,6 +51,19 @@ def populate():
                      "views": 4, },
                 ],
         },
+        "Cars": {
+            "pargs_list":
+                [
+                    {"title": "Shelby Mustang",
+                     "url": "http://www.ford.com/cars/mustang/trim/shelbygt500/",},
+                    {"title": "VW Touareg",
+                     "url": "http://www.vw.com/models/touareg/",},
+                    {"title": "Porsche 911",
+                     "url": "http://www.porsche.com/usa/models/911/",},
+                    {"title": "Testla Model X",
+                     "url": "http://www.teslamotors.com/modelx",},
+                ]
+        }
     }
     for cat_name, a_dict in pages_dict.iteritems():
         # Category.url is set in __init__ after super, based off Category.name attribute

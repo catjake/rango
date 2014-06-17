@@ -57,6 +57,8 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+# URL that defines login view, where users' are redirected to login to app
+LOGIN_URL = "/rango/login/"
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_PATH,'media') # Absolute to the media directory

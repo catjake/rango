@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% load static %} <!-- Inform Django of static media usage ahead -->
+<html>
+    <head>
+        <title>Rango: All Categories</title>
+    </head>
+    <body>
+    {% if categories %} <!-- Check views.index.context_dict["categories"] -->
+        <ul>
+            {% for category in categories %}
+            <li><a href="/rango/category/{{ category.url }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong> There are no categories present.</strong>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <p style="margin-left:10px;">
+            <a href="/rango/add_category">Add a New Category</a><br/>
+        </p>
+    {% endif %}
+
+    <p>
+        <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
+    </p>
+    </body>
+</html>

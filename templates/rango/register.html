@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rango: Registration</title>
+    </head>
+    <body>
+        <h1>Register with Rango</h1>
+
+        {% if registered %}
+            Rango says: <strong>thank you for registering!</strong>
+            <a href="/rango/">Return to the homepage.</a><br/>
+        {% else %}
+            Rango says: <strong>register here!</strong>
+
+            <form id="user_form" method="post" action="/rango/register/" enctype="multipart/form-data">
+            <!-- When you want users to upload files from a form, it's an absolute must to set enctype to
+                 multipart/form-data.  This attribute and value combination instructs your browser to
+                 send form data in a special way back to the server.  Essentially, the data
+                 representing your file is split into a series of chunks and sent.  Great reference:
+                 http://stackoverflow.com/questions/4526273/what-does-enctype-multipart-form-data-mean/4526286#4526286
+                 -->
+
+                {% csrf_token %}
+                <!-- Display each form. The as_p method wraps each element in a paragraph
+                     (<p>) element.  This ensures each element appears on a new line,
+                     making everything look neater. -->
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+
+                <!-- Provide a button to click to submit the form. -->
+                <input type="submit" name="submit" value="Register" />
+            </form>
+        {% endif %}
+    </body>
+</html>

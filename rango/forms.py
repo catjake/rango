@@ -6,7 +6,7 @@ __author__ = "jk"
 
 
 from django import forms
-from rango.models import Category, Page
+from rango.models import Category, Page, User, UserProfile
 import re
 
 
@@ -55,3 +55,34 @@ class PageForm(forms.ModelForm):
         # Some fields may allow NULL values, so we may not want to include them...
         # Here we are hiding the foreign key.
         fields = ("title", "url", "views")
+
+
+class UserForm(forms.ModelForm):
+    """
+    UserForm: For creating new user
+    """
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        """
+        Relate UserForm form to User model
+        And specify fields to include in form
+        """
+        model = User
+        fields = ("username", "first_name", "last_name", "email", "password")
+
+
+class UserProfileForm(forms.ModelForm):
+    """
+    For adding content for UserProfile Model attributes: website and picture
+    """
+    class Meta:
+        """
+        Relate UserProfileForm form to UserProfile model
+        And specify fields to include in form
+        """
+        model = UserProfile
+        fields = ("website", "picture")
+
+
+

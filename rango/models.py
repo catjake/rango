@@ -4,6 +4,7 @@ Create models here.  To verify, use manage.py
 ./manage.py sql rango
 """
 from django.db import models
+from django.contrib.auth.models import User
 import re
 
 # Create your models here.
@@ -63,3 +64,24 @@ class Page(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class UserProfile(models.Model):
+    """
+    Add attributes website and picture to models.User class
+    """
+    user = models.OneToOneField(User)
+
+    # the additional attributes
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to="profile_images", blank=True)
+
+    def __unicode__(self):
+        """
+        Override the Model.__unicode__() method to return something meaningful
+        :return:
+        """
+        return self.user.username
+
+
+

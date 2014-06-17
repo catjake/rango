@@ -52,6 +52,7 @@ Cheatsheet:
 
 Status:
 
++ Chapters 1-7:
     * Added templates for index and about in views
     * Added functionality for displaying images in static files location, designated by STATICFILES_DIR
     * Added media server
@@ -62,3 +63,13 @@ Status:
     * Added (views) details page to templates for each Category.name and corresponding Page objects
     * Created Page and Category Forms
     * Added views for creating new category and adding a page to an existing category
++ Chapter 8:
+    * Setup Authentication
+    * Added user attributes
+    * Created UserRegistration View, Template, and Form
+    * Added Login Functionality
+    * Created Login View and Template
+    * Added logout functionality
+    * Set user permissions for adding or modifying categories and pages based on user.is_authenticated()
++ Chapter 9:
+    * Implemented template for html layout
