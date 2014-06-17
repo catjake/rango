@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+{% extends 'rango/base.html' %}
+{% load static %} <!-- Inform Django of static media usage ahead -->
 <!-- Add Category template: post form to /rango/add_category, user interface for adding data to
      new category instance
      Note: {% csrf_token %} is a Cross-Site Request Forgery (CSRF) token, helps to protect and
            secure the HTTP POST action initiated when form is submitted.  Required by Django
            framework, user will probably encounter errors on form submission if token not included-->
 <html>
-    <head>
-        <title>Rango: Add Category</title>
-    </head>
 
-    <body>
+    {% block title %}Add Category{% endblock %}
+
+    {% block body_block %}
         <h1>Add a Category</h1>
 
         <form id="category_form" method="post" action="/rango/add_category/">
@@ -27,5 +28,9 @@
 
             <input type="submit" name="submit" value="Create Category" />
         </form>
-    </body>
+    {% endblock %}
+
+    {% block footer_block %}
+        <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
+    {% endblock %}
 </html>

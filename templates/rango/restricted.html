@@ -2,12 +2,12 @@
 
 {% extends 'rango/base.html' %}
 {% load static %} <!-- Inform Django of static media usage ahead -->
-
 <html>
-    {% block title %}About{% endblock %}
+
+    {% block title %}Restricted{% endblock %}
 
     {% block body_block %}
-        <p>Rango says:<br/>&nbsp;&nbsp;&nbsp;&nbsp;<i>It's about {{ timestamp.now }}</i></p>
+        <strong>{{ message }}</strong>
     {% endblock %}
 
     {% block footer_block %}

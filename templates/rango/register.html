@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
+{% extends 'rango/base.html' %}
+{% load static %} <!-- Inform Django of static media usage ahead -->
 <html>
-    <head>
-        <title>Rango: Registration</title>
-    </head>
-    <body>
+
+    {% block title %}Registration{% endblock %}
+
+    {% block body_block %}
         <h1>Register with Rango</h1>
 
         {% if registered %}
@@ -32,5 +34,9 @@
                 <input type="submit" name="submit" value="Register" />
             </form>
         {% endif %}
-    </body>
+    {% endblock %}
+
+    {% block footer_block %}
+        <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
+    {% endblock %}
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
+{% extends 'rango/base.html' %}
 {% load static %} <!-- Inform Django of static media usage ahead -->
 <html>
-    <head>
-        <title>Rango: {{ category_name }}</title>
-    </head>
-    <body>
+
+    {% block title %}{{ category_name }}{% endblock %}
+
+    {% block body_block %}
         <h1>{{ category_name }}</h1>
+
         {% if category %}
             {% if pages %}
                 <ul>
@@ -19,14 +21,15 @@
             {% endif %}
             {% if user.is_authenticated %}
                 <p style="margin-left:10px;">
-                    <a href="/rango/category/{{ category.url }}/add_page">Add a New Page</a>
+                    <a href="/rango/category/{{ category.url }}/add_page">Add a Page</a>
                 </p>
             {% endif %}
         {% else %}
             The specified category {{ category_name }} does not exist!
         {% endif %}
-        <p>
-            <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
-        </p>
-    </body>
+    {% endblock %}
+
+    {% block footer_block %}
+        <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
+    {% endblock %}
 </html>

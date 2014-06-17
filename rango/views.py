@@ -284,7 +284,10 @@ def restricted(request):
     Used with decorator django.contrib.auth.decorators.login_required, to restrict access to only
     those logged in.  For user's not logged in, redirect to /rango/login/
     """
-    return HttpResponse("Since you're logged in, you can see this!")
+    context_dict = {
+        "message": "Since you're logged in, you can see this!",
+    }
+    return _process_request(request, context_dict, "rango/restricted.html")
 
 
 @login_required

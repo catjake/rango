@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 
+{% extends 'rango/base.html' %}
+{% load static %} <!-- Inform Django of static media usage ahead -->
 <html>
-    <head>
-        <title>Rango:{{ category_name }}Add Page</title>
-    </head>
-    <body>
-    <h1>Add a Page to {{ category_name }}</h1>
 
-    <form id="page_form" method="post" action="/rango/category/{{ category_name_url }}/add_page/">
+    {% block title %}{{ category_name }}: Add Page{% endblock %}
 
-        {% csrf_token %}
-        {% for hidden in form.hidden_fields %}
-        {{ hidden }}
-        {% endfor %}
+    {% block body_block %}
+        <h1>Add a Page to {{ category_name }}</h1>
 
-        {% for field in form.visible_fields %}
-        {{ field.errors }}
-        {{ field.help_text }}
-        {{ field }}
-        {% endfor %}
+        <form id="page_form" method="post" action="/rango/category/{{ category_name_url }}/add_page/">
 
-        <input type="submit" name="submit" value="Create Page" />
-    </form>
-    </body>
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+                {{ field }}
+            {% endfor %}
+
+            <input type="submit" name="submit" value="Create Page" />
+        </form>
+    {% endblock %}
+
+    {% block footer_block %}
+        <a href=/rango><img src="{% static 'go_home_sign.jpg' %}" alt="Picture of Go Home Sign"/></a>
+    {% endblock %}
 </html>
